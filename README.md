@@ -1,5 +1,6 @@
 # KaineCrypt
 Test encryption algorithm for demonstrational purposes that uses binary manipulation and character replacements.
+
 ![](./screenshot.png)
 ## Usage
 ```bash
