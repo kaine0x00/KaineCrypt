@@ -85,6 +85,7 @@ def main():
     args = parser.parse_args()
     
     data = input("Input the text or hash: ")
+    
     print("\n")
     key = input("Input the key/seed to use: ")
     # The key must be long to prevent it being shorter than the text binary
@@ -92,6 +93,9 @@ def main():
         key = input("Sorry, the key isn't long enough, try again: ")
 
     if args.encrypt:
+        for i in [data]: 
+            if i not in "abcdefghijklmnopqrstuvwxyz@^":
+                data = input("Sorry, the password is out of the charset, try again: ")
         encrypted = KaineCrypt(data, key)
         print("Your hash is: ", encrypted)
     elif args.decrypt:
