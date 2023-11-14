@@ -93,9 +93,12 @@ def main():
         key = input("Sorry, the key isn't long enough, try again: ")
 
     if args.encrypt:
-        for i in [data]: 
-            if i not in "abcdefghijklmnopqrstuvwxyz@^":
-                data = input("Sorry, the password is out of the charset, try again: ")
+        flag = False
+        for i in range(len(data)): 
+            if data[i] not in "abcdefghijklmnopqrstuvwxyz@^":
+                flag = True
+        if flag == True:
+            data = input("Sorry, the password is out of the charset, try again: ")
         encrypted = KaineCrypt(data, key)
         print("Your hash is: ", encrypted)
     elif args.decrypt:
